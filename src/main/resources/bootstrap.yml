@@ -1,0 +1,27 @@
+spring:
+  application:
+          name: SchemaPerTenant
+  cloud:
+    config:
+         uri: http://localhost:8888
+    vault:
+      host: ${VAULT_HOST:localhost}
+      port: ${VAULT_HOST_PORT:8200}
+      scheme: http
+      authentication: TOKEN
+      token: ${VAULT_TOKEN:s.oAJlJp2a3FPni6EQ9m9pclux}
+      kv:
+        enabled: true
+        backend: secret
+        profile-separator: '/'
+        default-context: application
+        application-name: SchemaPerTenant
+      generic:
+           enabled: false
+  profiles: 
+      active: dev
+
+
+## MultitenantConfiguration
+
+## SchemaPerTenant
